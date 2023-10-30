@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="style.css">
+  <script src="cell.js" defer></script>
+  <script src="maze.js" defer></script>
+  <script src="main.js" defer></script>
+  <script src="event.js" defer></script>
+
+  <title>Maze generation Backtrack</title>
+</head>
+
+<body>
+  <button id="settingBtn">️⚙️</button>
+
+  <main id="main">
+    <div id="setting-title">SETTINGS</div>
+
+    <div class="option">
+      <p>Rows</p>
+      <div class="input">
+        <input type="range" id="_rows" value="20" min="2" max="60">
+      </div>
+      <span id="rowsTxt">20</span>
+    </div>
+
+    <div class="option">
+      <p>Columns</p>
+      <div class="input">
+        <input type="range" id="_columns" value="20" min="2" max="60">
+      </div>
+      <span id="columnsTxt">20</span>
+    </div>
+
+    <div class="option">
+      <p>Speed</p>
+      <div class="input">
+        <input type="range" id="_speed" value="10" min="1" max="60">
+      </div>
+      <span id="speedTxt">10</span>
+    </div>
+
+    <div id="btns">
+      <button id="resetMaze">RESET</button>
+      <button id="toggleColor">Toggle Color</button>
+    </div>
+
+    <div id="copyright">©️SouravBarui2023</div>
+  </main>
+
+  <div id="cvsParent">
+    <canvas id="myCvs"></canvas>
+  </div>
+</body>
+
+</html>

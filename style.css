@@ -1,0 +1,152 @@
+* {
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  touch-action: none;
+  -ms-touch-action: none;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  background: gray;
+  place-items: center;
+  overflow: hidden;
+  background: black;
+}
+#cvsParent {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: var(--cvs-p-w, 100vw);
+  height: var(--cvs-p-h, 100vh);
+  border: solid 5px transparent;
+}
+#myCvs {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+#settingBtn {
+  position: fixed;
+  padding: 0.4rem;
+  font-size: 1.6rem;
+  background: #0009;
+  top: 20px;
+  left: 20px;
+  z-index: 11;
+  border-radius: 1.2rem;
+  border: groove 0.2rem #fff3;
+  outline: none;
+  color: #fff9;
+  transition: linear 200ms color, linear 200ms border, linear 200ms background;
+}
+
+@media (hover: none) {
+  #settingBtn {
+    cursor: pointer;
+  }
+  #btns button {
+    cursor: pointer;
+  }
+}
+#settingBtn.active {
+  background: #000c;
+  color: #fff;
+  border: groove 0.2rem #fff;
+}
+
+main {
+  position: fixed;
+  width: 100vw;
+  height: auto;
+  display: grid;
+  bottom: -100vh;
+  padding-bottom: 1rem;
+  place-items: center;
+  grid-template-rows: 3fr 4fr 4fr 4fr 6fr 2fr;
+  gap: 1rem;
+  background: #fff;
+  border-top: solid 1px #fff;
+  z-index: 10;
+  transition: linear 200ms bottom;
+}
+main.active {
+  bottom: -100vh;
+}
+main #setting-title {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  font-size: 1rem;
+  color: #fff;
+  background: #0009;
+  font-weight: 900;
+  display: grid;
+  letter-spacing: 1px;
+  text-shadow: 0 0 1px #000;
+  font-family: Arila;
+  place-items: center;
+}
+main .option {
+  position: relative;
+  width: calc(100% - 2rem);
+  margin: 0 1rem;
+  display: grid;
+  grid-template-columns: 3fr 8fr 1fr;
+  place-items: center;
+  gap: 1rem;
+}
+main .option .input {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+}
+main .option .input input[type="range"] {
+  position: absolute;
+  width: 100%;
+}
+main .option p {
+  font-weight: 900;
+  width: 100%;
+  padding-left: 20%;
+  text-align: left;
+}
+main .option span {
+  color: blue;
+}
+main #btns {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+#btns button {
+  position: relative;
+  width: 8rem;
+  padding: 0.4rem 1rem;
+  font-weight: 900;
+  border-radius: 0.5rem;
+  border: solid 2px #f70;
+  background: #f80;
+  transition: linear 200ms transform;
+}
+#btns button#toggleColor {
+  border: solid 2px #777;
+  background: linear-gradient(to right, #777, #fff);
+}
+#btns button:active {
+  transform: scale(1.1);
+}
+#copyright {
+  width: 100%;
+  margin-right: 2rem;
+  font-weight: 900;
+  color: #0002;
+  text-align: right;
+}
